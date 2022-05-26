@@ -28,12 +28,14 @@ class UploadPanel extends React.Component  {
             <div className="d-flex justify-content-center">
                 <div id="upload-panel" onClick={this.handleClick} className="w-50 p-4 bg-white text-center rounded-3">
                     <h1>Upload and share your images</h1>
-                    <p className="mb-5">Get permalinks for Facebook, Twitter, discussion forums and blogs</p>
+                    <p className="mb-5">Get links for Facebook, Twitter, forums and more</p>
                     <div id="upload-zone" className="p-5">
                         <p className='fs-4'>Drag and drop files</p>
                         <p>or</p>
-                        <input id="input-file" type="file" onChange={() => this.handleSelectFile()} style={{ display: 'none' }} />
-                        <button type="button" className="btn btn-danger btn-lg"><i className="fas fa-upload "></i> Click to choose</button>
+                        <p>
+                            <input id="input-file" type="file" onChange={() => this.handleSelectFile()} style={{ display: 'none' }} />
+                            <button type="button" className="btn btn-danger btn-lg"><i className="fas fa-upload me-2"></i> Click to choose</button>
+                        </p>
                     </div>
                 </div>
             </div>

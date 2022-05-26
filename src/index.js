@@ -9,7 +9,7 @@ root.render(
     <nav className="navbar navbar-dark bg-danger shadow-sm mb-5">
       <div className="container-fluid">
         <span className="navbar-text">
-          <a id="page-title" href="/" className="fs-2 text-light pe-3 text-decoration-none">Web3 Image Hosting</a>
+          <a id="page-title" href="/" className="fs-2 text-light pe-3 text-decoration-none"><i class="fas fa-globe"></i> Web3 Image Hosting</a>
           <span className="fs-5">Free and decentralized image sharing</span>
           </span> 
           <div>

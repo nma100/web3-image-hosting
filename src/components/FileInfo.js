@@ -1,5 +1,7 @@
 import React from 'react';
 
+const IPFS_GATEWAY = 'https://ipfs.io/ipfs';
+
 class FileInfo extends React.Component  {
 
     constructor(props) {
@@ -53,7 +55,7 @@ class FileInfo extends React.Component  {
 
     render() {
         const encodedName = encodeURIComponent(this.props.file.name);
-        const imgUrl = `https://${this.props.cid}.ipfs.dweb.link?filename=${encodedName}`; 
+        const imgUrl = `${IPFS_GATEWAY}/${this.props.cid}?filename=${encodedName}`;
         const html = `<a href="${imgUrl}"><img src="${imgUrl}"></a>`;
         const bbcode = `[url=${imgUrl}][img]${imgUrl}[/img][/url]`;
         const markdown = `[${this.props.file.name}](${imgUrl})`;
