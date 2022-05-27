@@ -15,26 +15,13 @@ class FileInfo extends React.Component  {
     }
     
     handleCopyClipboard(e, id) {
-        console.log('Clip', e, id);
         let text = document.getElementById(id).value;
-        this.copyToClipboard(text);
-        document.querySelectorAll('.copied-clip').forEach(elem => elem.classList.add('d-none'));
-        document.querySelector(`.copied-clip.${id}`).classList.remove('d-none');
-    }
-        
-    copyToClipboard(text) {
-        let textArea = document.createElement("textarea");
-        textArea.value = text;
-        textArea.style.top = "0";
-        textArea.style.left = "0";
-        textArea.style.position = "fixed";
-
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
+        navigator.clipboard.writeText(text).then(function() {
+            document.querySelectorAll('.copied-clip').forEach(elem => elem.classList.add('d-none'));
+            document.querySelector(`.copied-clip.${id}`).classList.remove('d-none');    
+          }, function(e) {
+            console.error('Clipboard write failed', e);
+          });
     }
 
     formatBytes(bytes, decimals = 2) {
